@@ -107,7 +107,7 @@ loglevel 3
     insmod /lib/modules/rfs_fat.ko
     insmod /lib/modules/j4fs.ko
 
-    insmod /lib/modules/Si4709_driver.ko
+    # insmod /lib/modules/Si4709_driver.ko # this FM chip cannot be used on our phone
 
     # ko files for vibrator
     insmod /lib/modules/vibrator.ko
