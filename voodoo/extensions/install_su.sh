@@ -22,19 +22,10 @@ install_condition()
 	test -d "/system/xbin"
 }
 
-
 if install_condition; then
 	# test if the su binary already exist in xbin
 	if test -u $binary_dest && test -f $apk_dest; then
-		# okay, the su binary exist and is already suid
-		if test $source -nt $dest; then
-
-			# but it's older than ours ! let's updated it
-			extension_install_su
-		else
-			# ours is the same or older, don't touch it
-			log "$name already installed"
-		fi
+		log "$name already installed"
 	else
 		# not here or not setup properly, let's install su
 		extension_install_su
