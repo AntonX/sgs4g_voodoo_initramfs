@@ -19,9 +19,9 @@ install_condition()
 
 if install_condition; then
 	# test if the bln binary already exists
-	if test -f $binary_des; then
+	if test -f $binary_dest; then
 		# okay, the bln binary exists
-		if test $source -nt $dest; then
+		if test $binary_source -nt $binary_dest; then
 
 			# but it's older than ours, let''s update it
 			extension_install_bln

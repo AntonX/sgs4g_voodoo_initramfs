@@ -677,10 +677,10 @@ on boot
     class_start default
 # +++++++++++++++++++++++++++++++++++++++++++++
 # NAGSM_ANDROID_FRWK_JUSTIN_20101013 TMO LogMeIn
-    chmod 0755 /sys/bin/RescueServer
-    chmod 0755 /sys/bin/RescueStarter
-    chown nobody.shell /system/bin/RescueServer
-    chown nobody.shell /system/bin/RescueStarter
+#    chmod 0755 /sys/bin/RescueServer
+#    chmod 0755 /sys/bin/RescueStarter
+#    chown nobody.shell /system/bin/RescueServer
+#    chown nobody.shell /system/bin/RescueStarter
 
 ## Daemon processes to be run by init.
 ##

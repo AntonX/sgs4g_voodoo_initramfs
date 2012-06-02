@@ -24,7 +24,7 @@ install_condition()
 
 if install_condition; then
 	# test if the su binary already exist in xbin
-	if test -u $binary_dest && test -f $apk_dest; then
+	if test -f $binary_dest && test -f $apk_dest; then
 		log "$name already installed"
 	else
 		# not here or not setup properly, let's install su

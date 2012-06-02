@@ -1,6 +1,6 @@
 # Voodoo lagfix extension
 
-name='bootanimation binary from RaverX3X'
+name='Bootanimation binary'
 binary_source='/voodoo/extensions/bootanimation/bootanimation'
 binary_dest='/system/bin/bootanimation'
 
@@ -22,9 +22,9 @@ install_condition()
 
 if install_condition; then
 	# test if the bootanimation binary already exist in bin
-	if test -u $binary_dest; then
+	if test -f $binary_dest; then
 		# okay, the bootanimation binary exist
-		if test $source -nt $dest; then
+		if test $binary_source -nt $binary_dest; then
 
 			# but it's older than ours ! let's updated it
 			extension_install_bootanimation

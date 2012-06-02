@@ -15,9 +15,7 @@ link_test_dest=$install_dir/ls	# can be any file linked to busybox
 extension_link_busybox()
 {
 	# create links  
-  	for f in $( $binary_dest --list ) ; do
-    		/system/bin/ln -s $binary_dest $install_dir/$f
-  	done
+  	$binary_dest --install -s $install_dir
 }
 
 extension_install_busybox()
@@ -46,15 +44,18 @@ install_condition()
 
 if install_condition; then
 	
-	if test -e $binary_source ; then
-		# test if the busybox binary already exist in xbin and linked
-		if test -u $binary_dest && test -e $link_test_dest ; then
-		log "$name already installed"
-		else
+	if test ! -u $binary_dest ; then
+		if test -e $binary_source ; then
 			extension_install_busybox
 			log "$name is istalled"
 		fi
+	else
+		if test ! -e $link_test_dest ; then
+			extension_link_busybox
+			log "$name is symlinked"
+		fi
 	fi
+
 else
 	log "$name cannot be installed"
 fi
