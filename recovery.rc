@@ -36,6 +36,7 @@ on early-fs
     insmod /lib/modules/j4fs.ko
     mount j4fs /dev/block/stl6 /mnt/.lfs
     insmod /lib/modules/param.ko
+    insmod /lib/modules/vibrator.ko
 
     #temp
     chown root root /sbin/fat.format
